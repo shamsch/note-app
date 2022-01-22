@@ -1,5 +1,6 @@
 //this only creates the context, to use it we run it by a hook call useAuthContext 
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { projectAuth } from "../firebase/config";
 
 export const AuthContext = createContext()
 
@@ -10,6 +11,8 @@ export const authReducer = (state, action) => {
             return {...state, user: action.payload}
         case 'SIGNOUT':
             return {...state, user: null}
+        case 'CHANGE_LOG_STATUS':
+            return {...state, user: action.payload, check_log_status: true}
         default: 
             return state 
     }
@@ -18,8 +21,14 @@ export const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({children}) => {
     const [state, dispatch]=useReducer(authReducer, {
-        user:null
+        user:null,
+        check_log_status:false
     })
+    useEffect(()=>{
+        const unsub = projectAuth.onAuthStateChanged((user)=> {
+            dispatch({type: 'CHANGE_LOG_STATUS', payload: user})
+        })
+    },[])
     console.log("Context state:", state)
 
     return (
