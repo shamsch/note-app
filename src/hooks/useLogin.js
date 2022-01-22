@@ -17,7 +17,7 @@ export const useLogin = () => {
        const res = await projectAuth.signInWithEmailAndPassword(email,password)
       
       // dispatch login action
-      dispatch({ type: 'LOGIN', payload: res.user })
+      dispatch({ type: 'SIGNIN', payload: res.user })
 
       // update state only if not the components are not unmounted 
       if (!isCancelled) {
