@@ -50,7 +50,7 @@ export default function Login() {
             value={password}
           />
         </label>
-        {error? <p>{error} Please reload to sign up again.</p> : <button className="btn">Sign up!</button>}
+        {error? <p>{error} Please reload to sign up again.</p> : <button className="btn">Sign up</button>}
       </form>) : (<p>loading...</p>)}
       
 
