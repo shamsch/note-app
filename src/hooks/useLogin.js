@@ -14,10 +14,10 @@ export const useLogout = () => {
 
     try {
       // sign the user out
-      await projectAuth.signInWithEmailAndPassword(email,password)
+       const res = await projectAuth.signInWithEmailAndPassword(email,password)
       
       // dispatch login action
-      dispatch({ type: 'SIGNOUT' })
+      dispatch({ type: 'LOGIN', payload: res.user })
 
       // update state only if not the components are not unmounted 
       if (!isCancelled) {
