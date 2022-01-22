@@ -1,18 +1,20 @@
-// styles
-import styles from './Home.module.css'
-
 // components
 import NoteForm from './NoteForm'
 
+import { useState } from 'react'
+import {useAuthContext} from '../../hooks/useAuthContext'
+
 export default function Home() {
+  const [showAdd, setShowAdd]=useState(false);
+  const {user}= useAuthContext()
+
   return (
-    <div className={styles.container}>
-      <div className={styles.content}>
-        transaction list
+    <div>
+      <NoteForm show={showAdd} setShowAdd={setShowAdd} uid={user.uid}/>
+      <div>
+        {user.uid}
       </div>
-      <div className={styles.sidebar}>
-        <NoteForm />
-      </div>
+      {!showAdd && <button className='add-btn' onClick={()=>setShowAdd(true)}>Add note</button>}
     </div>
   )
 }

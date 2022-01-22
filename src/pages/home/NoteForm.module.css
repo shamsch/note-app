@@ -1,0 +1,89 @@
+.modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+}
+
+.modalContent{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modalContent form {
+  padding: 20px;
+  background: #d49e4b;
+  border-radius: 10px;
+}
+.modalContent input {
+  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  color: #555;
+  font-size: 1em;
+}
+
+.modalContent textarea {
+  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+  display: block;
+  width: 100%;
+  height: 150px;
+  font: normal 14px verdana;
+  line-height: 25px;
+  padding: 2px 10px;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+.modalContent label {
+  margin: 0 auto 20px;
+  display: block;
+  color: #fff;
+}
+.modalContent button {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 6px 12px;
+  background-color: transparent;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.modalContent button:hover {
+  background: #f8b601;
+}
+
+.closeBtn {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.closeBtn:hover {
+    background-color: darkgray;
+}
+
+.showModal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
