@@ -28,6 +28,7 @@ export const AuthContextProvider = ({children}) => {
         const unsub = projectAuth.onAuthStateChanged((user)=> {
             dispatch({type: 'CHANGE_LOG_STATUS', payload: user})
         })
+        return ()=> unsub()
     },[])
     console.log("Context state:", state)
 
