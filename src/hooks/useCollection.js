@@ -1,24 +1,35 @@
 //this is for fetching data from firbase 
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { projectFirestore } from "../firebase/config"
 
-export const useCollection = (collection) => {
+export const useCollection = (collection, _query,_orderBy) => {
   const [documents, setDocuments] = useState([])
   const [error, setError] = useState(null)
+  
+  //ref prevents the infinite loop caused by passing an array in use effect dependency array
+  const query= useRef(_query).current
+  const orderBy= useRef(_orderBy).current
 
   useEffect(() => {
     let ref = projectFirestore.collection(collection)
 
+    if(query){
+      ref=ref.where(...query)
+    }
+    if(orderBy){
+      ref=ref.orderBy(...orderBy)
+    }
+
     const unsubscribe = ref.onSnapshot(snapshot => {
       let results = []
       snapshot.docs.forEach(doc => {
-        console.log(doc)
+        //console.log(doc)
         results.push({...doc.data(), id: doc.id})
       });
       
       // update state
-      console.log(results)
+      //console.log(results)
       setDocuments(results)
       setError(null)
     }, error => {
@@ -29,7 +40,7 @@ export const useCollection = (collection) => {
     // unsubscribe on unmount
     return () => unsubscribe()
 
-  }, [collection])
+  }, [collection,query])
 
   return { documents, error }
 }

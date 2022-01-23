@@ -9,8 +9,10 @@ import { useCollection } from "../../hooks/useCollection";
 export default function Home() {
   const [showAdd, setShowAdd] = useState(false);
   const { user } = useAuthContext();
-  const { documents, error } = useCollection("notes");
-  console.log(documents);
+  const { documents, error } = useCollection(
+    "notes",
+   ['uid', '==', user.uid],
+   ["createdAt", "desc"]);
   return (
     <div>
       <NoteForm show={showAdd} setShowAdd={setShowAdd} uid={user.uid} />
