@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 import styles from "./NoteForm.module.css";
 

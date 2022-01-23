@@ -1,10 +1,15 @@
 // components
 import NoteForm from "./NoteForm";
 import NoteDisplay from "./NoteDisplay";
-
+//hooks
 import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useCollection } from "../../hooks/useCollection";
+
+//fonts
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Home() {
   const [showAdd, setShowAdd] = useState(false);
@@ -21,7 +26,7 @@ export default function Home() {
       {!showAdd && (
         <a className="fixed-btn" href>
           <div className="add-btn" onClick={() => setShowAdd(true)}>
-            +
+            <FontAwesomeIcon icon={faPlus} />
           </div>
         </a>
       )}

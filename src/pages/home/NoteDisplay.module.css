@@ -13,3 +13,16 @@
   background-color: #f7fcfa;
   border: 2px solid #ccc;
 }
+
+.content button{
+    display: block;
+    float: right;
+    cursor: pointer;
+    background-color: burlywood;
+    color:whitesmoke;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.content button:hover{
+  background-color: rgb(156, 132, 100);
+}
