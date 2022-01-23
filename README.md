@@ -1,3 +1,8 @@
+In this React project, I made use of Firebase authentication to authenticate user, used context API to store the user token, routes are guarded based on user and their status, database access is also secured through firebase rules and deployed using Firebase hosting. 
+
+Check deployment: https://my-notes-6185a.web.app/
+<details>
+<summary>Default REACT generated instructions</summary>
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+</details>
