@@ -22,7 +22,7 @@ export default function NoteForm({ show, setShowAdd, uid }) {
       <div className={styles.modalContent}>
         <form onSubmit={handleSubmit}>
           <span
-            class={styles.closeBtn}
+            className={styles.closeBtn}
             onClick={() => {
               setShowAdd(false);
             }}
