@@ -3,6 +3,7 @@ In this React project, I made use of Firebase authentication to authenticate use
 Check deployment: https://my-notes-6185a.web.app/
 <details>
 <summary>Default REACT generated instructions</summary>
+<br>   
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
