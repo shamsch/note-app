@@ -1,4 +1,4 @@
-In this React project, I made use of Firebase authentication to authenticate user, used context API to store the user token, routes are guarded based on user and their status, database access is also secured through firebase rules and deployed using Firebase hosting. 
+In this React project, I made use of Firebase authentication to authenticate user, used context API to store the user token, routes are guarded based on user and their status, database access is also secured through firebase rules and deployed using Firebase hosting. This branch uses react-router-version 6 instead of the old version 5.
 
 Check deployment: https://my-notes-6185a.web.app/
 <details>
